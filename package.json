@@ -1,0 +1,14 @@
+{
+  "name": "nexus-ai-monorepo",
+  "version": "1.0.0",
+  "description": "Nexus AI Platform",
+  "scripts": {
+    "start": "node build.js",
+    "dev": "node build.js",
+    "docker": "node build.js",
+    "build": "node build.js"
+  },
+  "type": "module",
+  "author": "",
+  "license": "ISC"
+}
