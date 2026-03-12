@@ -20,14 +20,30 @@ Nexus AI is not another "wrapper." It is a **YC-level intelligence orchestration
 
 ## Zero-Ops Quickstart
 
-Nexus is containerized and optimized for a single-command deployment.
+Nexus is optimized for local execution with Bun.
 
+### 1. Start the Backend
 ```bash
-bun run build
+cd backend
+bun install
+bun run dev
 ```
+*This starts the AI core and initializes the internal data engine.*
 
-*This command builds the parallelized Docker stack, initializes the secure internal network, and spins up the Tactical UI at port 3004.*
+### 2. Start the Tactical UI
+In a new terminal:
+```bash
+cd frontend
+bun install
+bun run dev
+```
+*This spins up the Next.js frontend, available at `http://localhost:3000`.*
 
 ---
 
 **Nexus AI — Beyond Information. Pure Alpha.**
+
+## License
+
+This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
+
