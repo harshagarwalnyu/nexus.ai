@@ -19,7 +19,7 @@ export const auth = betterAuth({
     emailAndPassword: {
         enabled: true,
     },
-    secret: authSecret || "development_only_secret_nexus_ai_2026",
+    secret: authSecret,
     baseURL: process.env.BETTER_AUTH_URL || "http://localhost:3004",
 });
 

@@ -4,9 +4,9 @@
   "description": "Nexus AI Backend - Simplified Unified Architecture",
   "type": "module",
   "scripts": {
-    "dev": "bun --watch index.js",
-    "start": "bun index.js",
-    "test-db": "bun test-databricks.js"
+    "dev": "bun --watch src/index.js",
+    "start": "bun src/index.js",
+    "test-db": "bun src/test-databricks.js"
   },
   "dependencies": {
     "@effect/schema": "^0.75.5",

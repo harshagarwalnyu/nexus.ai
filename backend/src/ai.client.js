@@ -1,9 +1,11 @@
 export const MODELS = {
-    GEMINI_1_5_PRO: 'gemini-1.5-pro',
-    GEMINI_1_5_FLASH: 'gemini-1.5-flash'
+    GEMINI_3_1_PRO: 'gemini-3.1-pro-preview',
+    // Legacy aliases for backward compatibility
+    GEMINI_1_5_PRO: 'gemini-3.1-pro-preview',
+    GEMINI_1_5_FLASH: 'gemini-3.1-pro-preview'
 };
 
-const DEFAULT_MODEL = MODELS.GEMINI_1_5_PRO;
+const DEFAULT_MODEL = MODELS.GEMINI_3_1_PRO;
 
 async function wait(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));

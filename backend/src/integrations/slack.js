@@ -771,7 +771,7 @@ function buildEmailModalView(draft, meta) {
 async function fetchHealthStatus() {
   const port = process.env.PORT || 3001;
   try {
-    const resp = await fetch(`http:
+    const resp = await fetch(`http://localhost:${port}/health`);
     const data = await resp.json();
     return data.services || data;
   } catch (_) {
