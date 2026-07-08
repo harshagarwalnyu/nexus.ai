@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  backend:
+    name: Backend
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.4.0
+      - name: Install dependencies
+        working-directory: backend
+        run: bun install --frozen-lockfile
+      - name: Test
+        working-directory: backend
+        run: bun test
+
+  frontend:
+    name: Frontend
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.4.0
+      - name: Install dependencies
+        working-directory: frontend
+        run: bun install --frozen-lockfile
+      - name: Test
+        working-directory: frontend
+        run: bun test
+      - name: Build
+        working-directory: frontend
+        env:
+          BETTER_AUTH_SECRET: ci-build-only-secret-not-for-production
+          GEMINI_API_KEY: ci-build-only-dummy-key
+        run: bun --bun run build

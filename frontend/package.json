@@ -6,7 +6,8 @@
     "dev": "bun run lib/db-init.ts && next dev",
     "build": "next build",
     "start": "bun run lib/db-init.ts && next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "bun test"
   },
   "dependencies": {
     "@ai-sdk/react": "^3.0.118",
